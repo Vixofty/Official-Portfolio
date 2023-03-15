@@ -1,13 +1,125 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
+
+:root {
+    --color-bg: #e2f3f5;
+    --color-font: #03153a;
+    --color-primary: #3d5af1;
+    --color-primary-transp: #3d5bf1ea;
+    --color-secundary: #22cfee;
+    --color-secundary-transp: #22cfeee7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar{
+    display: none;
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+body {
+    font-size: 62.5%;
+    font-family: Helvetica, sans-serif;
+    background-color: var(--color-bg);
+}
+
+h1 {
+    font-size: clamp(2.3em, 4vw, 5em);
+}
+
+h2 {
+    font-size: clamp(2em, 2.5vw, 3em);
+    padding: 4% 0% 5% 6%;
+}
+
+h3 {
+    margin: auto;
+    font-size: clamp(1.2em, 1.6vw, 2.2em);
+    color: var(--color-secundary);
+}
+
+h4 {
+    font-size: clamp(1.8em, 2vw, 2.7em);
+}
+
+p {
+    font-size: clamp(1.3em, 1.8vw, 2.4em) ;
+}
+
+.container {
+    background-color: var(--color-primary);
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: var(--color-font);
+}
+a.active {
+    color: var(--color-secundary);
+    background-color: var(--color-font);
+}
+
+
+
+
+
+
+/* .section-1-welcome-container h2{
+    position: relative;
+    margin: auto;
+    width: max-content;
+    font-weight: 600;
+    font-family: "Source Code Pro", monospace;
+}
+.section-1-welcome-container h2::before,
+.section-1-welcome-container h2::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.section-1-welcome-container h2::before{
+    background: var(--color-gray);
+    animation: typewriter 4s steps(24) forwards 1s;
+}
+.section-1-welcome-container h2::after{
+    width: 0.125em;
+    background-color: var(--color-blue);
+    animation: 
+    typewriter 4s steps(24) forwards 1s,
+    blink 0.7s steps(24) infinite;
+}
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }   
+}
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+.section-1-welcome-container p{
+    text-align: center;
+    opacity: 0;
+    animation: fading 1s forwards 6s;
+}
+@keyframes fading {
+    to {
+        opacity: 1;
+    }   
+} */

@@ -1,0 +1,246 @@
+.div-image{
+    background-color: aquamarine;
+    padding-top: 8vh;
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    height: 100vh;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
+.div-image img {
+    height: 40%;
+    margin: auto 5% ;
+}
+.fst-banner {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    height: 100vh;
+    padding-top: 8vh;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fst-banner-slide 2s forwards 1s;
+}
+@keyframes fst-banner-slide {
+    to {
+        clip-path: polygon(0 0, 75% 0, 50% 100%, 0 100%);
+    }
+}
+@keyframes fst-banner-slide-responsive {
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 35%, 0 65%);
+    }
+}
+
+h1, h4 {
+    font-family: "Source Code Pro", monospace;
+}
+.fst-banner h1{
+    margin: 0% 5% ;
+    position: relative;
+    width: max-content;
+}
+.fst-banner h1::before,
+.fst-banner h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.fst-banner h1::before {
+    background: var(--color-primary);
+    animation: typewriter 3s steps(21) forwards 1s;
+}
+.fst-banner h1::after {
+    width: 0.125em;
+    background-color: var(--color-font);
+    animation: 
+    typewriter 3s steps(21) forwards 1s,
+    blink 0.7s steps(21) infinite;
+}
+.fst-banner h4 {
+    margin: 5%;
+    opacity: 0;
+    animation: appear 0.5s forwards 5s ;
+}
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }   
+}
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+@keyframes appear {
+    to {
+        opacity: 100;
+    }
+}
+
+
+.profile-div {
+    display: flex;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.profile-img-div {
+    display: flex;
+    flex: 4; 
+    justify-content: end;  
+}
+.profile-img-div img{
+    margin: auto;
+    width: 60%;
+    object-fit: contain;
+}
+.profile-container {
+    flex: 5;
+    padding: 4%;
+}
+.profile {
+    padding: 5%;
+    border: solid 1px black;
+    border-radius: 3em;
+    box-shadow: 0px 10px 15px black;
+    display: flex;
+    background-color: var(--color-primary);
+}
+.profile img {
+    width: 35%;
+    margin: auto 6%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.descript-div h2 {
+    font-family: "Source Code Pro", monospace;
+    background-color: var(--color-secundary);
+    border-radius: 0.6em;
+}
+.descript-div p {
+    font-family: 'EB Garamond', serif;
+    padding: 3%;
+    margin-top: 7.5%;
+    color: var(--color-font);
+    border: solid 3px var(--color-secundary);
+    border-radius: 0.6em;
+}
+
+.abilities {
+    padding: 5% 15%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.abilities h2 {
+    padding: 5% ;
+}
+
+.abilities-div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ability {
+    display: flex;
+    margin: 1% 1%;
+    padding: 1% 2%;
+    border-radius: 2em;
+    border: solid 3px var(--color-font);
+    background-color: var(--color-primary-transp);
+}
+.ability:hover {
+    scale: 1.1 ;
+    transition: 0.3s;
+}
+.education-div {
+    padding: 7%;
+    display: flex;
+}
+.education {
+    flex: 5;
+    height: fit-content;
+    margin: auto;
+    border-radius: 3em;
+    border: solid 1px black;
+    background-color: var(--color-primary);
+    box-shadow: 0px 10px 15px black;
+}
+.education h2 {
+    padding: 2% 5% 0%;
+}
+.education details {
+    cursor: pointer;
+    font-size: clamp(1.4em, 1.7vw, 2.2em) ;
+    border-radius: 1em;
+    color: var(--color-font);
+    background-color: var(--color-secundary);
+    font-weight: 300;
+    margin:6% 5%; 
+    padding: 2%;
+    transition: 0.5s;
+}
+.education details:hover {
+    transform: scale(1.05);
+}
+.education details summary {
+    font-weight: 600;
+}
+.education-img-div {
+    display: flex;
+    flex: 4;
+}
+.education-img-div img {
+    margin: auto;
+    width: 55%;
+    object-fit: contain;
+}
+.footer {
+    width: 100%;
+    background-color: var(--color-font);
+}
+.footer p {
+    font-size: clamp(1em, 1.2vw, 1.5em);
+    padding: 2%;
+    color: var(--color-secundary);
+}
+
+@media screen and (orientation: portrait) {
+    header {
+        justify-content: center;
+    }
+    nav {
+        width: 100%;
+        justify-content: center;
+    }
+    .div-image {
+        align-items: end;
+    }
+    .div-image img {
+        height: 35%;
+        margin: 10% auto;
+    }
+    .fst-banner {
+        padding-top: 25%;
+        justify-content: start;
+        animation: fst-banner-slide-responsive 2s forwards 1s;
+    }
+    .profile-img-div {
+        display: none;
+    }
+    .education-img-div {
+        display: none;
+    }
+    .form {
+        width: 70%;
+    }
+}
