@@ -1,3 +1,6 @@
+/* Principal Sheet */
+/* First banner and animations */
+
 .div-image{
     background-color: aquamarine;
     padding-top: 8vh;
@@ -14,6 +17,7 @@
     margin: auto 5% ;
 }
 .fst-banner {
+    background-color: var(--color-primary);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     height: 100vh;
     padding-top: 8vh;
@@ -24,6 +28,7 @@
     justify-content: center;
     animation: fst-banner-slide 2s forwards 1s;
 }
+
 @keyframes fst-banner-slide {
     to {
         clip-path: polygon(0 0, 75% 0, 50% 100%, 0 100%);
@@ -66,8 +71,36 @@ h1, h4 {
 .fst-banner h4 {
     margin: 5%;
     opacity: 0;
-    animation: appear 0.5s forwards 5s ;
+    animation: appear 0.5s forwards 4.5s ;
 }
+.redes-div {
+    margin: 0% 5%;
+}
+.redes-div a {
+    position: relative;
+    left: -100%;
+    margin: 0% 2%;
+    font-size: clamp(2em, 2vw, 5em);
+}
+.redes-div a i:hover {
+    transition: scale 0.3s;
+}
+.redes-div a i:hover {
+    scale: 1.3;
+} 
+.github-btn {
+    animation: dashed 0.8s forwards 5.6s;
+}
+.insta-btn {
+    animation: dashed 0.8s forwards 5.4s;
+}
+.wsp-btn {
+    animation: dashed 0.8s forwards 5.2s;
+}
+.linkedin-btn {
+    animation: dashed 0.8s forwards 5s;
+}
+
 @keyframes typewriter {
     to {
         left: 100%;
@@ -83,7 +116,16 @@ h1, h4 {
         opacity: 100;
     }
 }
+@keyframes dashed {
+    70% {
+        left: 2%;
+    }
+    100% {
+        left: 0%
+    }
+}
 
+/* Profile Section */
 
 .profile-div {
     display: flex;
@@ -101,12 +143,11 @@ h1, h4 {
     object-fit: contain;
 }
 .profile-container {
-    flex: 5;
+    flex: 8;
     padding: 4%;
 }
 .profile {
     padding: 5%;
-    border: solid 1px black;
     border-radius: 3em;
     box-shadow: 0px 10px 15px black;
     display: flex;
@@ -116,58 +157,100 @@ h1, h4 {
     width: 35%;
     margin: auto 6%;
     object-fit: contain;
+    border: solid 4px var(--color-secundary);
     border-radius: 50%;
+    box-shadow: 0px 0px 25px var(--color-secundary);
 }
-
 .descript-div h2 {
+    padding: 4% 0% 5% 6%;
     font-family: "Source Code Pro", monospace;
     background-color: var(--color-secundary);
     border-radius: 0.6em;
 }
 .descript-div p {
-    font-family: 'EB Garamond', serif;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 600;
     padding: 3%;
     margin-top: 7.5%;
     color: var(--color-font);
+    text-align: justify;
     border: solid 3px var(--color-secundary);
+    background-color: var(--color-secundary);
     border-radius: 0.6em;
 }
 
+/* Abilities Section */
+
 .abilities {
-    padding: 5% 15%;
+    padding: 5% 5%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 .abilities h2 {
-    padding: 5% ;
+    margin: 3.5%;
+    padding: 1.5% ;
+    color: var(--color-font);
+    border-radius: 0.8em;
+    background-color: var(--color-secundary);
+    font-family: "Source Code Pro", monospace;
 }
-
 .abilities-div {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.ability {
-    display: flex;
-    margin: 1% 1%;
-    padding: 1% 2%;
-    border-radius: 2em;
-    border: solid 3px var(--color-font);
-    background-color: var(--color-primary-transp);
+.card {
+    width: 10vw;
+    min-width: 8em;
+    height: 10vw;
+    min-height: 8em;
+    margin: 2% 1.5%;
+	perspective: 800px;
 }
-.ability:hover {
-    scale: 1.1 ;
-    transition: 0.3s;
+.card-inner {
+	position: relative;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: transform 0.5s;
 }
+.card:hover .card-inner {
+	transform: rotateY(180deg);
+}
+.card-body {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	backface-visibility: hidden;
+	border-radius: 2em;
+	box-shadow: 0 10px 15px 
+		rgba(0, 0, 0, 0.45);
+}
+.card-body i{
+    color: var(--color-secundary);
+    font-size: clamp(5em, 5vw, 9em);
+}
+.card-title {
+    font-family: "Source Code Pro", monospace;
+}
+.card-body--front {
+	background-color: var(--color-primary);
+}
+.card-body--back {
+	background-color: var(--color-primary);
+	transform: rotateY(180deg);
+}
+
+/* Education Section */
+
 .education-div {
     padding: 7%;
     display: flex;
 }
 .education {
-    flex: 5;
+    flex: 6;
     height: fit-content;
     margin: auto;
     border-radius: 3em;
@@ -176,16 +259,20 @@ h1, h4 {
     box-shadow: 0px 10px 15px black;
 }
 .education h2 {
-    padding: 2% 5% 0%;
+    margin: 3.5%;
+    padding: 1.5%;
+    font-family: "Source Code Pro", monospace;
+    background-color: var(--color-secundary);
+    border-radius: 1em;
 }
 .education details {
-    cursor: pointer;
-    font-size: clamp(1.4em, 1.7vw, 2.2em) ;
+    font-size: clamp(1.4em, 1.7vw, 2.2em);
+    font-family: "Source Code Pro", monospace;
     border-radius: 1em;
+    border: solid 5px var(--color-secundary);
     color: var(--color-font);
-    background-color: var(--color-secundary);
     font-weight: 300;
-    margin:6% 5%; 
+    margin: 6% 5%; 
     padding: 2%;
     transition: 0.5s;
 }
@@ -193,6 +280,7 @@ h1, h4 {
     transform: scale(1.05);
 }
 .education details summary {
+    cursor: pointer;
     font-weight: 600;
 }
 .education-img-div {
@@ -204,15 +292,20 @@ h1, h4 {
     width: 55%;
     object-fit: contain;
 }
+
+/* Footer */
+
 .footer {
     width: 100%;
-    background-color: var(--color-font);
+    background-color: var(--color-primary);
 }
 .footer p {
     font-size: clamp(1em, 1.2vw, 1.5em);
-    padding: 2%;
+    padding: 1%;
     color: var(--color-secundary);
 }
+
+/* Responsive */
 
 @media screen and (orientation: portrait) {
     header {
@@ -234,8 +327,23 @@ h1, h4 {
         justify-content: start;
         animation: fst-banner-slide-responsive 2s forwards 1s;
     }
+    .fst-banner h4{
+        margin: 15% 5%;
+    }
     .profile-img-div {
         display: none;
+    }
+    .profile {
+        position: relative;
+        justify-content: center;
+        padding-top: 20%;
+        margin-top: 40%;
+    }
+    .profile img {
+        position: absolute;
+        margin: auto;
+        top: -46%;
+        width: 50%;
     }
     .education-img-div {
         display: none;

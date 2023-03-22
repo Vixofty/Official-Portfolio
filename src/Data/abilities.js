@@ -1,26 +1,30 @@
 export const Abilities = [
     {
-        name: "HTML"
+        name: "HTML",
+        icon_class: "fa-brands fa-html5"
     },
     {
-        name: "CSS"
+        name: "CSS",
+        icon_class: "fa-brands fa-css3-alt"
     },
     {
-        name: "Javascript"
+        name: "Javascript",
+        icon_class: "fa-brands fa-square-js"
     },
     {
-        name: "React"
+        name: "React",
+        icon_class: "fa-brands fa-react"
     },
     {
-        name: "Redux"
+        name: "Bootstrap",
+        icon_class: "fa-brands fa-bootstrap"
     },
     {
-        name: "Bootstrap"
+        name: "NodeJs",
+        icon_class: "fa-brands fa-node-js"
     },
     {
-        name: "NodeJs"
-    },
-    {
-        name: "Git"
+        name: "Git",
+        icon_class: "fa-brands fa-git-alt"
     }
 ]
